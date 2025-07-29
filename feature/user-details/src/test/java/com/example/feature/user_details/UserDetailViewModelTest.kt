@@ -51,17 +51,24 @@ class UserDetailViewModelTest {
         }
 
         viewModel = UserDetailViewModel(repository)
-        viewModel.loadDetails("octocat")
 
         viewModel.uiState.test {
-            assertEquals(UserDetailUiState.Loading, awaitItem()) // Initial state
+            // First item will always be the default Loading from MutableStateFlow
+            assertTrue(awaitItem() is UserDetailUiState.Loading)
+
+            // Now we call the actual method to load data
+            viewModel.loadDetails("octocat")
+
+            // Then Success should be emitted from the flow
             val item = awaitItem()
             assertTrue(item is UserDetailUiState.Success)
             assertEquals(fakeUser, (item as UserDetailUiState.Success).user)
             assertEquals(fakeRepos, item.repos)
+
             cancelAndIgnoreRemainingEvents()
         }
     }
+
 
     @Test
     fun `loadDetails emits Error when repository throws`() = runTest {
