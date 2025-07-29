@@ -72,14 +72,16 @@ class UserDetailViewModelTest {
         }
 
         viewModel = UserDetailViewModel(repository)
-        viewModel.loadDetails("failuser")
 
         viewModel.uiState.test {
-            assertEquals(UserDetailUiState.Loading, awaitItem()) // Initial
+            viewModel.loadDetails("failuser") // 👈 move this here
+
+            assertTrue(awaitItem() is UserDetailUiState.Loading)
             val error = awaitItem()
             assertTrue(error is UserDetailUiState.Error)
             assertEquals("User not found", (error as UserDetailUiState.Error).message)
             cancelAndIgnoreRemainingEvents()
         }
     }
+
 }
