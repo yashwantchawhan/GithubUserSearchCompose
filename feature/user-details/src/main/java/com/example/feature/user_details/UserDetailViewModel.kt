@@ -3,7 +3,7 @@ package com.example.feature.user_details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.core.remote.userdetails.GitHubDetailRepository
+import com.example.core.remote.userdetails.UserDetailRepository
 import com.example.core.remote.userdetails.UserDetailUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserDetailViewModel @Inject constructor(
-    private val repository: GitHubDetailRepository
+    private val repository: UserDetailRepository
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow<UserDetailUiState>(UserDetailUiState.Loading)

@@ -1,8 +1,8 @@
 package com.example.core.remote.di
 
 import com.example.core.remote.GitHubService
-import com.example.core.remote.userdetails.GitHubDetailRepository
-import com.example.core.remote.userlist.GitHubRepository
+import com.example.core.remote.userdetails.UserDetailRepository
+import com.example.core.remote.userlist.UserListRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -55,8 +55,8 @@ object NetworkModule {
     fun provideGitHubRepository(
         service: GitHubService,
         @Named("ioDispatcher") coroutineDispatcher: CoroutineDispatcher
-    ): GitHubRepository {
-        return GitHubRepository(service, coroutineDispatcher)
+    ): UserListRepository {
+        return UserListRepository(service, coroutineDispatcher)
     }
 
     @Provides
@@ -64,5 +64,5 @@ object NetworkModule {
     fun provideGitHubDetailRepository(
         service: GitHubService,
         @Named("ioDispatcher") coroutineDispatcher: CoroutineDispatcher
-    ): GitHubDetailRepository = GitHubDetailRepository(service, coroutineDispatcher)
+    ): UserDetailRepository = UserDetailRepository(service, coroutineDispatcher)
 }

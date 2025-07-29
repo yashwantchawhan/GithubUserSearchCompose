@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 
-class GitHubDetailRepository @Inject constructor(
+class UserDetailRepository @Inject constructor(
     private val service: GitHubService,
     private val dispatcher: CoroutineDispatcher
 ) {

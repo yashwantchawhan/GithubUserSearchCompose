@@ -32,7 +32,7 @@ import com.example.core.remote.userlist.UserListUiState
 fun UserListScreen(
     onUserClick: (String) -> Unit
 ) {
-    val viewModel: GitHubUserListViewModel = hiltViewModel()
+    val viewModel: UserListViewModel = hiltViewModel()
     val uiState by viewModel.uiState.collectAsState()
     var query by remember { mutableStateOf("") }
 

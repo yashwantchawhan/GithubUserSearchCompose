@@ -7,7 +7,7 @@ import org.junit.Assert.assertTrue
 import app.cash.turbine.test
 import com.example.core.models.userdetails.GitHubRepo
 import com.example.core.models.userdetails.GitHubUser
-import com.example.core.remote.userdetails.GitHubDetailRepository
+import com.example.core.remote.userdetails.UserDetailRepository
 import com.example.core.remote.userdetails.UserDetailUiState
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -20,7 +20,7 @@ import org.junit.Test
 class UserDetailViewModelTest {
 
     private lateinit var viewModel: UserDetailViewModel
-    private val repository: GitHubDetailRepository = mockk()
+    private val repository: UserDetailRepository = mockk()
 
     private val fakeUser = GitHubUser(
         login = "octocat",

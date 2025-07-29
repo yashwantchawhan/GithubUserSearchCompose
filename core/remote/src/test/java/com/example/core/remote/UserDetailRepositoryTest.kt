@@ -4,7 +4,7 @@ package com.example.core.remote
 import app.cash.turbine.test
 import com.example.core.models.userdetails.GitHubRepo
 import com.example.core.models.userdetails.GitHubUser
-import com.example.core.remote.userdetails.GitHubDetailRepository
+import com.example.core.remote.userdetails.UserDetailRepository
 import com.example.core.remote.userdetails.UserDetailUiState
 import io.mockk.coEvery
 import io.mockk.mockk
@@ -17,9 +17,9 @@ import org.junit.Before
 import org.junit.Test
 
 
-class GitHubDetailRepositoryTest {
+class UserDetailRepositoryTest {
 
-    private lateinit var repository: GitHubDetailRepository
+    private lateinit var repository: UserDetailRepository
     private val service: GitHubService = mockk()
     @OptIn(ExperimentalCoroutinesApi::class)
     private val testDispatcher = UnconfinedTestDispatcher()
@@ -43,7 +43,7 @@ class GitHubDetailRepositoryTest {
 
     @Before
     fun setup() {
-        repository = GitHubDetailRepository(service, testDispatcher)
+        repository = UserDetailRepository(service, testDispatcher)
     }
 
     @Test
