@@ -25,6 +25,7 @@ The app showcases proper modularization, UI state handling, and clean dependency
 - Turbine + Mockk: Reactive unit testing for ViewModels and repositories.
 
 ## Directory Structure
+```
 app/
 ├── MainActivity.kt                  # Entry point setting up Compose UI
 ├── GithubUserSearchComposeApp.kt   # App theme & AppNavHost
@@ -80,6 +81,7 @@ tests/
 │       ├── UserDetailViewModelTest.kt
 │       └── UserDetailRepositoryTest.kt
 
+```
 # Testing Strategy
 - Unit Tests  ViewModels (Turbine + MockK), repositories
 - UI Tests	  Not added but can be done jetpack compose UI with fake ViewModels
