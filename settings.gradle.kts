@@ -21,4 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "GithubUserSearchCompose"
 include(":app")
- 
+include(":core")
+include(":core:remote")
+include(":core:local")
+include(":core:models")
+include(":feature")
+include(":feature:user-details")
+include(":feature:user-list")
