@@ -85,7 +85,7 @@ tests/
 ```
 # Testing Strategy
 - Unit Tests  ViewModels (Turbine + MockK), repositories
-- UI Tests	  Not added but can be done jetpack compose UI with fake ViewModels
+- UI Tests	  Not added but can be done using jetpack compose UI with fake ViewModels
 - CI/CD	      GitHub Actions for PR validation and testing
 
 # Setup & Run
