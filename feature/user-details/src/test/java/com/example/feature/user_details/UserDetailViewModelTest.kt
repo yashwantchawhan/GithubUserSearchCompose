@@ -39,11 +39,6 @@ class UserDetailViewModelTest {
         )
     )
 
-    @Before
-    fun setUp() {
-        // ViewModel will be created inside each test to inject mock behavior
-    }
-
     @Test
     fun `loadDetails emits Success when repository returns user and repos`() = runTest {
         coEvery { repository.getUserAndRepos("octocat") } returns flow {
