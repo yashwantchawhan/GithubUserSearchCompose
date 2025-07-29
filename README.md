@@ -99,8 +99,8 @@ tests/
 
 # Platform Requirements
 Platform	Version
-Android	    Min SDK 21
-            Target SDK 34
+Android	    Min SDK 24
+            Target SDK 35
 
 # Design Decisions
 - Modular Architecture: Easy to scale and test.
