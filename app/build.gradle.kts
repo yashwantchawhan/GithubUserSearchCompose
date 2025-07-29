@@ -52,8 +52,10 @@ dependencies {
     implementation(project(":feature:user-list"))
     implementation(project(":core:design-system"))
 
-    implementation("androidx.navigation:navigation-compose:2.7.0")
+    //Navigation
+    implementation(libs.navigation.compose)
 
+    // Android core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -62,6 +64,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    //Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

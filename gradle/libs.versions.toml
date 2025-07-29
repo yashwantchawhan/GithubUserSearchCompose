@@ -14,6 +14,7 @@ hiltVersion = "2.56.2"
 hiltComposeVersion = "1.2.0"
 retrofitVersion = "2.9.0"
 glideVersion = "1.0.0-beta01"
+navigationComposeVersion = "2.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +39,7 @@ hilt-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", vers
 square-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVersion" }
 square-retrofit-convertor = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitVersion" }
 glide = { group = "com.github.bumptech.glide", name = "compose", version.ref = "glideVersion" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationComposeVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
