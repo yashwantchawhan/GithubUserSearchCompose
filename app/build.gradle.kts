@@ -47,6 +47,12 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    //Feature module
+    implementation(project(":feature:user-details"))
+    implementation(project(":feature:user-list"))
+
+    implementation("androidx.navigation:navigation-compose:2.7.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
