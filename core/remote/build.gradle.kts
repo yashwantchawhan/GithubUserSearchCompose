@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -33,10 +35,23 @@ android {
 }
 
 dependencies {
+    //Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
+    //Retrofit
+    implementation(libs.square.retrofit)
+    implementation(libs.square.retrofit.convertor)
+
+    //AndroidX Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
+    //module
+    implementation(project(":core:models"))
+
+    //Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
