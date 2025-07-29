@@ -1,33 +1,18 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
 
 package com.example.feature.user_details
 
 import android.content.Intent
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -37,12 +22,12 @@ import androidx.core.net.toUri
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.example.core.esign_system.components.AppBar
 import com.example.core.esign_system.components.ErrorMessage
 import com.example.core.esign_system.components.LoadingIndicator
 import com.example.core.models.userdetails.GitHubRepo
 import com.example.core.models.userdetails.GitHubUser
 import com.example.core.remote.userdetails.UserDetailUiState
+
 
 @Composable
 fun UserDetailScreen(username: String, onBack: () -> Unit) {
@@ -56,17 +41,24 @@ fun UserDetailScreen(username: String, onBack: () -> Unit) {
 
     when (val state = uiState) {
         is UserDetailUiState.Loading -> LoadingIndicator()
-
-        is UserDetailUiState.Error -> {
-            ErrorMessage(state.message)
-        }
-
+        is UserDetailUiState.Error -> ErrorMessage(state.message)
         is UserDetailUiState.Success -> {
             val user = state.user
             val repos = state.repos
-
             Scaffold(
-                topBar = { AppBar(title = user.login, onBackClick = onBack) }
+                topBar = {
+                    TopAppBar(
+                        title = { Text(user.login) },
+                        navigationIcon = {
+                            IconButton(onClick = onBack) {
+                                Icon(
+                                    Icons.AutoMirrored.Filled.ArrowBack,
+                                    contentDescription = "Back"
+                                )
+                            }
+                        }
+                    )
+                }
             ) { innerPadding ->
                 DetailContent(
                     user = user,
@@ -77,14 +69,8 @@ fun UserDetailScreen(username: String, onBack: () -> Unit) {
                     },
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(
-                            PaddingValues(
-                                top = innerPadding.calculateTopPadding(),
-                                bottom = innerPadding.calculateBottomPadding(),
-                                start = 16.dp,
-                                end = 16.dp
-                            )
-                        )
+                        .padding(innerPadding)
+                        .padding(horizontal = 16.dp)
                 )
             }
         }
