@@ -1,4 +1,4 @@
-package com.example.core.esign_system
+package com.example.core.esign_system.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack

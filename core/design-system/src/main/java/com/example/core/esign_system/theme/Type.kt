@@ -1,4 +1,4 @@
-package com.example.githubusersearchcompose.ui.theme
+package com.example.core.esign_system.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,6 +1,5 @@
-package com.example.githubusersearchcompose.ui.theme
+package com.example.core.esign_system.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

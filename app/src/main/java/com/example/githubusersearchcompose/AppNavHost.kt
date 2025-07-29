@@ -1,5 +1,6 @@
 package com.example.githubusersearchcompose
 
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -9,7 +10,7 @@ import com.example.feature.user_list.UserListScreen
 
 
 @Composable
-fun AppNavHost() {
+fun AppNavHost(innerPadding: PaddingValues) {
     val navController = rememberNavController()
 
     NavHost(

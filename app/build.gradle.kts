@@ -50,6 +50,7 @@ dependencies {
     //Feature module
     implementation(project(":feature:user-details"))
     implementation(project(":feature:user-list"))
+    implementation(project(":core:design-system"))
 
     implementation("androidx.navigation:navigation-compose:2.7.0")
 
