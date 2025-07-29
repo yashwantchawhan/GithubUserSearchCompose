@@ -10,6 +10,7 @@ The app showcases proper modularization, UI state handling, and clean dependency
 
 ## Screenshots
 
+[Screen_recording_20250729_162411.webm](https://github.com/user-attachments/assets/30d8adf5-9909-47ce-a36c-37b2af5595df)
 
 ## Technical Features
 - Jetpack Compose: Declarative UI framework for building native UI.
