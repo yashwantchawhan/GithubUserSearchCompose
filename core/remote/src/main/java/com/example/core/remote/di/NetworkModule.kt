@@ -20,7 +20,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
     private const val BASE_URL = "https://api.github.com/"
-    private const val GITHUB_TOKEN = "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"
+    private const val GITHUB_TOKEN = ""
 
     @Provides
     @Singleton
